@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "UAVCAN-Demo-Board"
-Date "2021-04-02"
+Date "2021-04-17"
 Rev "0.1"
 Comp "generationmake"
 Comment1 ""
@@ -24,19 +24,6 @@ F 1 "DNI" H 6659 1905 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 6600 1800 50  0001 C CNN
 F 3 "" H 6600 1950 50  0000 C CNN
 	1    6600 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L CAN-transceiver:SN65HVD232 U?
-U 1 1 5FD751FF
-P 4250 2000
-AR Path="/5FD58A5B/5FD751FF" Ref="U?"  Part="1" 
-AR Path="/5FD751FF" Ref="U2"  Part="1" 
-F 0 "U2" H 4775 2887 60  0000 C CNN
-F 1 "SN65VHD232" H 4775 2781 60  0000 C CNN
-F 2 "DIP:DIP-8_W7.62mm" H 5100 1950 60  0001 C CNN
-F 3 "" H 4250 2150 60  0000 C CNN
-	1    4250 2000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -75,19 +62,6 @@ F 1 "100nF" H 3892 1155 50  0000 L CNN
 F 2 "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" H 3800 1050 50  0001 C CNN
 F 3 "" H 3800 1200 50  0000 C CNN
 	1    3800 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power-supply:+3V3 #PWR?
-U 1 1 5FD75219
-P 3800 1000
-AR Path="/5FD58A5B/5FD75219" Ref="#PWR?"  Part="1" 
-AR Path="/5FD75219" Ref="#PWR04"  Part="1" 
-F 0 "#PWR04" H 3800 850 50  0001 C CNN
-F 1 "+3V3" H 3815 1173 50  0000 C CNN
-F 2 "" H 3800 1000 50  0000 C CNN
-F 3 "" H 3800 1000 50  0000 C CNN
-	1    3800 1000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -154,7 +128,6 @@ Wire Wire Line
 	4250 1850 4150 1850
 Wire Wire Line
 	4150 1850 4150 1950
-NoConn ~ 5300 1850
 NoConn ~ 5300 1450
 Text Label 5500 1600 0    50   ~ 0
 CANH
@@ -1461,4 +1434,80 @@ Text Label 750  6550 0    50   ~ 0
 DIP_SW3
 Text Label 750  6650 0    50   ~ 0
 DIP_SW4
+$Comp
+L CAN-transceiver:MCP2562-EP U2
+U 1 1 607B4627
+P 4250 2000
+F 0 "U2" H 4775 2887 60  0000 C CNN
+F 1 "MCP2562-EP" H 4775 2781 60  0000 C CNN
+F 2 "DIP:DIP-8_W7.62mm" H 5100 1950 60  0001 C CNN
+F 3 "" H 4250 2150 60  0000 C CNN
+	1    4250 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L devices:C_0603 C?
+U 1 1 607B62E8
+P 5500 2200
+AR Path="/5FD58A5B/607B62E8" Ref="C?"  Part="1" 
+AR Path="/607B62E8" Ref="C6"  Part="1" 
+F 0 "C6" H 5592 2246 50  0000 L CNN
+F 1 "100nF" H 5592 2155 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" H 5500 2050 50  0001 C CNN
+F 3 "" H 5500 2200 50  0000 C CNN
+	1    5500 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power-supply:+3V3 #PWR?
+U 1 1 607B6554
+P 5500 2000
+AR Path="/5FD58A5B/607B6554" Ref="#PWR?"  Part="1" 
+AR Path="/607B6554" Ref="#PWR0102"  Part="1" 
+F 0 "#PWR0102" H 5500 1850 50  0001 C CNN
+F 1 "+3V3" H 5515 2173 50  0000 C CNN
+F 2 "" H 5500 2000 50  0000 C CNN
+F 3 "" H 5500 2000 50  0000 C CNN
+	1    5500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power-supply:GND #PWR?
+U 1 1 607B655E
+P 5500 2350
+AR Path="/5FD58A5B/607B655E" Ref="#PWR?"  Part="1" 
+AR Path="/607B655E" Ref="#PWR0103"  Part="1" 
+F 0 "#PWR0103" H 5500 2100 50  0001 C CNN
+F 1 "GND" H 5505 2177 50  0000 C CNN
+F 2 "" H 5500 2350 50  0000 C CNN
+F 3 "" H 5500 2350 50  0000 C CNN
+	1    5500 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 2300 5500 2350
+Wire Wire Line
+	5500 2000 5500 2050
+$Comp
+L power-supply:+5V #PWR?
+U 1 1 607C20B1
+P 3800 1000
+AR Path="/5FD58A5B/607C20B1" Ref="#PWR?"  Part="1" 
+AR Path="/607C20B1" Ref="#PWR0104"  Part="1" 
+F 0 "#PWR0104" H 3800 850 50  0001 C CNN
+F 1 "+5V" H 3815 1173 50  0000 C CNN
+F 2 "" H 3800 1000 50  0000 C CNN
+F 3 "" H 3800 1000 50  0000 C CNN
+	1    3800 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 2050 5350 2050
+Wire Wire Line
+	5350 2050 5350 1850
+Wire Wire Line
+	5350 1850 5300 1850
+Connection ~ 5500 2050
+Wire Wire Line
+	5500 2050 5500 2100
 $EndSCHEMATC
